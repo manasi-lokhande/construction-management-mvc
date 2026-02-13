@@ -1,0 +1,8 @@
+const checkAuth = (req, res, next) => {
+    if (!req.session.userData) {
+        return res.redirect("/login");
+    }
+    next();
+};
+
+module.exports = checkAuth;
